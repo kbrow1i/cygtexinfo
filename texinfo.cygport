@@ -1,0 +1,34 @@
+NAME="texinfo"
+VERSION=5.2
+RELEASE=2
+CATEGORY="Doc Text"
+SUMMARY="GNU documentation formatter and viewer"
+DESCRIPTION="Texinfo is the official documentation format of the GNU project.  It
+uses a single source file to produce output in a number of formats,
+both online and printed (dvi, html, info, pdf, xml, etc.).  This means
+that instead of writing different documents for online information and
+another for a printed manual, you need write only one document.  The
+Texinfo system is well-integrated with GNU Emacs."
+
+HOMEPAGE="http://www.gnu.org/software/texinfo/"
+SRC_URI="mirror://gnu/texinfo/texinfo-${VERSION}.tar.xz"
+
+PATCH_URI="ctrl_n.patch"
+PATCH_URI+=" system_h.patch"
+PATCH_URI+=" termdep_h.patch"
+
+DIFF_EXCLUDES="tap-driver.sh"
+
+src_install() {
+	cd ${B}
+	cyginstall
+	cygmake TEXMF=${D}/usr/share/texmf-site install-tex
+	cat > ${C}/texinfo.postinstall <<-_EOF
+		if [ -x /usr/bin/mktexlsr ]
+		then
+		    /usr/bin/mktexlsr
+		fi
+	_EOF
+	# Suppress generation of .cygwin.patch file.
+	cp -R ${C} ${S}/../../origsrc/${SRC_DIR}
+}

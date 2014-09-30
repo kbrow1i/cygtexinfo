@@ -1,0 +1,10 @@
+--- origsrc/texinfo-5.2/info/infomap.c	2013-08-22 13:58:30.000000000 -0400
++++ src/texinfo-5.2/info/infomap.c	2014-09-29 17:39:46.062764100 -0400
+@@ -297,6 +297,7 @@ static unsigned char default_emacs_like_
+   CONTROL('f'), NUL,              A_info_forward_char,
+   CONTROL('h'), NUL,              A_info_get_help_window,
+   CONTROL('l'), NUL,              A_info_redraw_display,
++  CONTROL('n'), NUL,              A_info_next_line,
+   CONTROL('p'), NUL,              A_info_prev_line,
+   CONTROL('r'), NUL,              A_isearch_backward,
+   CONTROL('s'), NUL,              A_isearch_forward,
