@@ -1,6 +1,6 @@
 NAME="texinfo"
 VERSION=5.2
-RELEASE=2
+RELEASE=3
 CATEGORY="Doc Text"
 SUMMARY="GNU documentation formatter and viewer"
 DESCRIPTION="Texinfo is the official documentation format of the GNU project.  It
@@ -23,12 +23,11 @@ src_install() {
 	cd ${B}
 	cyginstall
 	cygmake TEXMF=${D}/usr/share/texmf-site install-tex
-	cat > ${C}/texinfo.postinstall <<-_EOF
+	dodir /etc/postinstall
+	cat > ${D}/etc/postinstall/texinfo.sh <<-_EOF
 		if [ -x /usr/bin/mktexlsr ]
 		then
 		    /usr/bin/mktexlsr
 		fi
 	_EOF
-	# Suppress generation of .cygwin.patch file.
-	cp -R ${C} ${S}/../../origsrc/${SRC_DIR}
 }
