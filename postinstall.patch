@@ -1,7 +1,0 @@
---- origsrc/texinfo-5.2/CYGWIN-PATCHES/texinfo.postinstall	1969-12-31 19:00:00.000000000 -0500
-+++ src/texinfo-5.2/CYGWIN-PATCHES/texinfo.postinstall	2014-09-29 20:57:54.143723400 -0400
-@@ -0,0 +1,4 @@
-+if [ -x /usr/bin/mktexlsr ]
-+then
-+    /usr/bin/mktexlsr
-+fi

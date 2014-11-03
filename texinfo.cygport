@@ -1,14 +1,31 @@
 NAME="texinfo"
 VERSION=5.2
 RELEASE=3
-CATEGORY="Doc Text"
-SUMMARY="GNU documentation formatter and viewer"
-DESCRIPTION="Texinfo is the official documentation format of the GNU project.  It
+
+PKG_NAMES="texinfo texinfo-tex info"
+
+texinfo_CATEGORY="Devel Text"
+texinfo_tex_CATEGORY="Devel Text"
+info_CATEGORY="Base"
+
+texinfo_SUMMARY="GNU documentation formatter"
+info_SUMMARY="GNU documentation viewer"
+texinfo_tex_SUMMARY="GNU documentation formatter (printable formats)"
+
+texinfo_DESCRIPTION="Texinfo is the official documentation format of the GNU project.  It
 uses a single source file to produce output in a number of formats,
 both online and printed (dvi, html, info, pdf, xml, etc.).  This means
 that instead of writing different documents for online information and
 another for a printed manual, you need write only one document.  The
-Texinfo system is well-integrated with GNU Emacs."
+Texinfo system is well-integrated with GNU Emacs.  This package
+supplies everything needed for all but the printable formats."
+
+texinfo_tex_DESCRIPTION="This package provides support for the Texinfo printable output formats."
+
+info_DESCRIPTION="This package provides the standalone info viewer."
+
+texinfo_REQUIRES="info"
+texinfo_tex_REQUIRES="texinfo"
 
 HOMEPAGE="http://www.gnu.org/software/texinfo/"
 SRC_URI="mirror://gnu/texinfo/texinfo-${VERSION}.tar.xz"
@@ -17,6 +34,36 @@ PATCH_URI="ctrl_n.patch"
 PATCH_URI+=" system_h.patch"
 PATCH_URI+=" termdep_h.patch"
 
+texinfo_CONTENTS="
+	usr/bin/makeinfo
+	usr/bin/pod2texi
+	usr/bin/texi2any
+	usr/share/doc/texinfo
+	usr/share/info/texinfo*
+	usr/share/man/man*/texinfo*
+	usr/share/man/man1/makeinfo*
+	usr/share/man/man1/pod2texi*
+	usr/share/man/man1/texi2any*
+	usr/share/texinfo"
+
+texinfo_tex_CONTENTS="
+	etc/postinstall/texinfo-tex.sh
+	usr/bin/*dvi
+	usr/bin/texi2pdf
+	usr/bin/texindex.exe
+	usr/share/man/man1/*dvi*
+	usr/share/man/man1/texi2pdf*
+	usr/share/man/man1/texindex*
+	usr/share/texmf-site"
+
+info_CONTENTS="
+	usr/bin/info*.exe
+	usr/bin/install-info.exe
+	usr/share/info/info*
+	usr/share/locale
+	usr/share/man/man*/info*
+	usr/share/man/man1/install-info*"
+
 DIFF_EXCLUDES="tap-driver.sh"
 
 src_install() {
@@ -24,10 +71,7 @@ src_install() {
 	cyginstall
 	cygmake TEXMF=${D}/usr/share/texmf-site install-tex
 	dodir /etc/postinstall
-	cat > ${D}/etc/postinstall/texinfo.sh <<-_EOF
-		if [ -x /usr/bin/mktexlsr ]
-		then
-		    /usr/bin/mktexlsr
-		fi
+	cat > ${D}/etc/postinstall/texinfo-tex.sh <<-_EOF
+		/usr/bin/mktexlsr /usr/share/texmf-site
 	_EOF
 }
