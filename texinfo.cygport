@@ -1,6 +1,14 @@
 NAME="texinfo"
-VERSION=5.2
-RELEASE=3
+VERSION=6.0
+RELEASE=1
+
+HOMEPAGE="http://www.gnu.org/software/texinfo/"
+
+SRC_URI="mirror://gnu/texinfo/texinfo-${VERSION}.tar.xz"
+# SRC_URI="http://alpha.gnu.org/gnu/texinfo/texinfo-${VERSION}.tar.xz"
+SRC_URI+=" postinstall.sh"
+
+# PATCH_URI="5.9.94-skip_interactive_tests.patch"
 
 PKG_NAMES="texinfo texinfo-tex info"
 
@@ -27,13 +35,6 @@ info_DESCRIPTION="This package provides the standalone info viewer."
 texinfo_REQUIRES="info"
 texinfo_tex_REQUIRES="texinfo"
 
-HOMEPAGE="http://www.gnu.org/software/texinfo/"
-SRC_URI="mirror://gnu/texinfo/texinfo-${VERSION}.tar.xz"
-
-PATCH_URI="ctrl_n.patch"
-PATCH_URI+=" system_h.patch"
-PATCH_URI+=" termdep_h.patch"
-
 texinfo_CONTENTS="
 	usr/bin/makeinfo
 	usr/bin/pod2texi
@@ -50,11 +51,14 @@ texinfo_tex_CONTENTS="
 	etc/postinstall/texinfo-tex.sh
 	usr/bin/*dvi
 	usr/bin/texi2pdf
-	usr/bin/texindex.exe
+	usr/bin/texindex
 	usr/share/man/man1/*dvi*
 	usr/share/man/man1/texi2pdf*
 	usr/share/man/man1/texindex*
 	usr/share/texmf-site"
+
+# texindex calls gawk
+texinfo_tex_REQUIRES="gawk texinfo"
 
 info_CONTENTS="
 	usr/bin/info*.exe
@@ -64,14 +68,12 @@ info_CONTENTS="
 	usr/share/man/man*/info*
 	usr/share/man/man1/install-info*"
 
-DIFF_EXCLUDES="tap-driver.sh"
+DIFF_EXCLUDES="tap-driver.sh config.in stamp-vti version.texi"
 
 src_install() {
 	cd ${B}
 	cyginstall
 	cygmake TEXMF=${D}/usr/share/texmf-site install-tex
-	dodir /etc/postinstall
-	cat > ${D}/etc/postinstall/texinfo-tex.sh <<-_EOF
-		/usr/bin/mktexlsr /usr/share/texmf-site
-	_EOF
+	exeinto /etc/postinstall
+	newexe ${S}/postinstall.sh texinfo-tex.sh
 }
