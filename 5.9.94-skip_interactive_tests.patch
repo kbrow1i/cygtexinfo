@@ -1,0 +1,64 @@
+--- origsrc/texinfo-5.9.94/info/Makefile.am	2015-06-07 08:49:39.000000000 -0400
++++ src/texinfo-5.9.94/info/Makefile.am	2015-06-18 15:40:51.148694800 -0400
+@@ -107,61 +107,17 @@ TESTS = \
+ 	t/dir-3-menus.sh \
+ 	t/dir-menus-sloppily.sh \
+ 	t/where-dir-file.sh \
+-	t/dir-dangling-entry.sh \
+ 	t/spec-file-node.sh \
+ 	t/spec-no-node.sh \
+ 	t/spec-menu.sh \
+-	t/all-only.sh \
+ 	t/empty.sh \
+ 	t/cr-tag-table.sh \
+-	t/tab.sh \
+-	t/tab-argument.sh \
+-	t/tab-no-xref.sh \
+-	t/tab-skip-node.sh \
+-	t/body-start.sh \
+-	t/end-of-line.sh \
+-	t/goal-column.sh \
+-	t/star-note-non-whitespace.sh \
+-	t/c-u-m-x-scroll-forward.sh \
+-	t/last-no-history.sh \
+-	t/split-footnotes.sh \
+-	t/window-split-dir.sh \
+-	t/last-node-not-top-level.sh \
+-	t/adjust-anchors.sh \
+-	t/search-after-tag.sh \
+-	t/split-file-menu.sh \
+-	t/index.sh \
+-	t/no-index.sh \
+-	t/index-apropos.sh \
+-	t/index-search.sh \
+-	t/index-completing.sh \
+-	t/split-index.sh \
+-	t/index-long-nodeline.sh \
+-	t/empty-infopath.sh \
+-	t/menu-sequence.sh \
+-	t/relative-reference.sh \
+-	t/resize-in-completions.sh \
+-	t/replace-viewed.sh \
+-	t/search-skip-screen.sh \
+-	t/search-empty.sh \
+-	t/inc-sea-forward.sh \
+-	t/inc-sea-forward-nonregex.sh \
+-	t/inc-sea-insensitive.sh \
+-	t/inc-sea-history.sh \
+-	t/gc-split.sh \
+-	t/anchor-positions.sh \
+-	t/quoted-label-as-target.sh \
+-	t/quoted-target.sh \
+-	t/quoted-label-and-target.sh \
+-	t/goto-quoted.sh \
+-	t/next-quoted.sh \
+ 	t/help.sh
+ 
+ XFAIL_TESTS = \
+ 	t/quoted-label-as-target.sh \
+ 	t/quoted-target.sh \
+ 	t/quoted-label-and-target.sh \
+-	t/goto-quoted.sh \
+ 	t/next-quoted.sh
+ 
+ EXTRA_DIST += $(TESTS) $(XFAIL_TESTS) \
