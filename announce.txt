@@ -1,17 +1,19 @@
 The following packages have been updated in the Cygwin distribution:
 
-* texinfo-6.0-1
-* info-6.0-1
-* texinfo-tex-6.0-1
+* texinfo-6.1-1
+* info-6.1-1
+* texinfo-tex-6.1-1
 
 Texinfo is a documentation system that uses a single source file to produce output in a number of formats, both online and printed (dvi, html, info, pdf, xml, etc.).
 
-This is an update to the latest upstream release.  See the release announcement (http://lists.gnu.org/archive/html/bug-texinfo/2015-06/msg00052.html) for a list of changes since the last release.
+This is an update to the latest upstream release.  See the release announcement (http://lists.gnu.org/archive/html/bug-texinfo/2016-02/msg00035.html) for a list of changes since the last release.
 
 Cygwin packaging
 ================
 
 The info package contains the standalone info viewer as well as the install-info program.  The texinfo package contains everything else except support for the printable output formats (such as pdf).  The texinfo-tex package supplies the latter.  In particular, /usr/bin/makeinfo is in the texinfo package, but the command 'makeinfo --pdf' won't work unless you install texinfo-tex.
+
+This release of the info package also contains a postinstall script that was previously in the _update-info-dir package, which is now obsolete.
 
 Ken Brown
 Cygwin's texinfo maintainer

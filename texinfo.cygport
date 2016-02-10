@@ -1,14 +1,19 @@
 NAME="texinfo"
-VERSION=6.0
+VERSION=6.1
 RELEASE=1
 
 HOMEPAGE="http://www.gnu.org/software/texinfo/"
 
 SRC_URI="mirror://gnu/texinfo/texinfo-${VERSION}.tar.xz"
 # SRC_URI="http://alpha.gnu.org/gnu/texinfo/texinfo-${VERSION}.tar.xz"
-SRC_URI+=" postinstall.sh"
 
-# PATCH_URI="5.9.94-skip_interactive_tests.patch"
+# SVN_URI="svn://svn.sv.gnu.org/texinfo/trunk"
+# inherit svn
+
+SRC_URI+=" texinfo-tex.sh"
+SRC_URI+=" 0p_update-info-dir.dash"
+
+PATCH_URI="6.0.93-1-fix_interactive_tests.patch"
 
 PKG_NAMES="texinfo texinfo-tex info"
 
@@ -39,6 +44,7 @@ texinfo_CONTENTS="
 	usr/bin/makeinfo
 	usr/bin/pod2texi
 	usr/bin/texi2any
+	usr/lib/texinfo
 	usr/share/doc/texinfo
 	usr/share/info/texinfo*
 	usr/share/man/man*/texinfo*
@@ -61,6 +67,7 @@ texinfo_tex_CONTENTS="
 texinfo_tex_REQUIRES="gawk texinfo"
 
 info_CONTENTS="
+	etc/postinstall/0p_update-info-dir.dash
 	usr/bin/info*.exe
 	usr/bin/install-info.exe
 	usr/share/info/info*
@@ -70,10 +77,18 @@ info_CONTENTS="
 
 DIFF_EXCLUDES="tap-driver.sh config.in stamp-vti version.texi"
 
+# The following is not necessary since there is a configure test for
+# whether PERL-XS modules can be built; but I want to know if it
+# doesn’t work.
+CYGCONF_ARGS="--enable-perl-xs"
+
 src_install() {
 	cd ${B}
 	cyginstall
 	cygmake TEXMF=${D}/usr/share/texmf-site install-tex
 	exeinto /etc/postinstall
-	newexe ${S}/postinstall.sh texinfo-tex.sh
+	doexe ${S}/texinfo-tex.sh ${S}/0p_update-info-dir.dash
 }
+
+# http://lists.gnu.org/archive/html/bug-texinfo/2016-01/msg00026.html
+KEEP_LA_FILES=all
