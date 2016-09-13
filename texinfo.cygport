@@ -1,6 +1,6 @@
 NAME="texinfo"
-VERSION=6.1
-RELEASE=2
+VERSION=6.3
+RELEASE=1
 
 HOMEPAGE="http://www.gnu.org/software/texinfo/"
 
@@ -13,9 +13,7 @@ SRC_URI="mirror://gnu/texinfo/texinfo-${VERSION}.tar.xz"
 SRC_URI+=" texinfo-tex.sh"
 SRC_URI+=" 0p_update-info-dir.dash"
 
-PATCH_URI="6.0.93-1-fix_interactive_tests.patch"
-PATCH_URI+=" invalid.patch"
-PATCH_URI+=" help.patch"
+PATCH_URI="6.1.90-1-fix_interactive_tests.patch"
 
 PKG_NAMES="texinfo texinfo-tex info"
 

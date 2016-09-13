@@ -1,14 +1,12 @@
 The following packages have been updated in the Cygwin distribution:
 
-* texinfo-6.1-2
-* info-6.1-2
-* texinfo-tex-6.1-2
+* texinfo-6.3-1
+* info-6.3-1
+* texinfo-tex-6.3-1
 
 Texinfo is a documentation system that uses a single source file to produce output in a number of formats, both online and printed (dvi, html, info, pdf, xml, etc.).
 
-This is a rebuild of the 6.1-1 packages, patched to fix the bug reported in
-
-  https://cygwin.com/ml/cygwin/2016-03/msg00027.html
+This is an update to the latest upstream release.  See the release announcement (http://lists.gnu.org/archive/html/bug-texinfo/2016-09/msg00024.html) for a list of changes since the last release.
 
 Cygwin packaging
 ================
