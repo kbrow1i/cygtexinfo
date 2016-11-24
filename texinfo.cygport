@@ -38,7 +38,9 @@ texinfo_tex_DESCRIPTION="This package provides support for the Texinfo printable
 info_DESCRIPTION="This package provides the standalone info viewer."
 
 texinfo_REQUIRES="info"
-texinfo_tex_REQUIRES="texinfo"
+
+# texindex calls gawk; postinstall script calls mktexlsr.
+texinfo_tex_REQUIRES="gawk texinfo texlive-collection-basic"
 
 texinfo_CONTENTS="
 	usr/bin/makeinfo
@@ -62,9 +64,6 @@ texinfo_tex_CONTENTS="
 	usr/share/man/man1/texi2pdf*
 	usr/share/man/man1/texindex*
 	usr/share/texmf-site"
-
-# texindex calls gawk
-texinfo_tex_REQUIRES="gawk texinfo"
 
 info_CONTENTS="
 	etc/postinstall/0p_update-info-dir.dash
