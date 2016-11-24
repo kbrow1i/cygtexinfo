@@ -14,7 +14,7 @@ install:
 - echo Updating Cygwin
 - '%CACHE%\%SETUP% -qnNdO -R "%CYGWIN_ROOT%" -s "%CYGWIN_MIRROR%" -l "%CACHE%"'
 - echo Installing build dependencies
-- '%CACHE%\%SETUP% -qnNdO -R "%CYGWIN_ROOT%" -s "%CYGWIN_MIRROR%" -l "%CACHE%" -P "cygport,libcrypt-devel"'
+- '%CACHE%\%SETUP% -qnNdO -R "%CYGWIN_ROOT%" -s "%CYGWIN_MIRROR%" -l "%CACHE%" -P "cygport,libcrypt-devel,libncurses-devel"'
 - echo Install done
 cache:
 - C:\cache
@@ -23,5 +23,5 @@ build_script:
 - '%CYGWIN_ROOT%\bin\bash -lc "cd $APPVEYOR_BUILD_FOLDER; cygport texinfo.cygport fetch all test"'
 # test: off
 artifacts:
-- path: texinfo-*\log
+- path: texinfo-*\log\*.log
 # deploy: off
