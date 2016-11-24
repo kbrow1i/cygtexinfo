@@ -77,6 +77,8 @@ info_CONTENTS="
 
 DIFF_EXCLUDES="tap-driver.sh config.in stamp-vti version.texi"
 
+DEPEND="libcrypt-devel"
+
 # The following is not necessary since there is a configure test for
 # whether PERL-XS modules can be built; but I want to know if it
 # doesn’t work.
