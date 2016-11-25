@@ -14,7 +14,7 @@ install:
 - echo Updating Cygwin
 - '%CACHE%\%SETUP% -qnNdO -R "%CYGWIN_ROOT%" -s "%CYGWIN_MIRROR%" -l "%CACHE%"'
 - echo Installing build dependencies
-- '%CACHE%\%SETUP% -qnNdO -R "%CYGWIN_ROOT%" -s "%CYGWIN_MIRROR%" -l "%CACHE%" -P "cygport,libcrypt-devel,libncurses-devel"'
+- '%CACHE%\%SETUP% -qnNdO -R "%CYGWIN_ROOT%" -s "%CYGWIN_MIRROR%" -l "%CACHE%" -P "cygport,libcrypt-devel,libncurses-devel,procps-ng"'
 - echo Install done
 cache:
 - C:\cache
