@@ -16,7 +16,7 @@ cygport texinfo.cygport inst
 echo packaging...
 cygport texinfo.cygport pkg
 
-tar -cJf artifact.tar.xz texinfo-*/dist texinfo-*/log
-
 echo testing...
 cygport texinfo.cygport test
+
+tar -cJf artifact.tar.xz texinfo-*/dist texinfo-*/log texinfo-*/build/info/test-suite.log
