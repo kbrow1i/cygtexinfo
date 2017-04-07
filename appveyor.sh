@@ -1,22 +1,14 @@
 #!/bin/sh
-set -e
+exit_status=0
 
-echo fetching...
-cygport texinfo.cygport fetch
+cygport texinfo.cygport fetch prep compile || exit_status=1
 
-echo prepping...
-cygport texinfo.cygport prep
+if [ $exit_status -eq 0 ]
+then
+    cygport texinfo.cygport inst pkg || exit_status=1
+    cygport texinfo.cygport test || echo "Test(s) failed."
+fi
 
-echo compiling...
-cygport texinfo.cygport compile
+tar -cJf artifact.tar.xz texinfo-*/dist texinfo-*/log
 
-echo installing...
-cygport texinfo.cygport inst
-
-echo packaging...
-cygport texinfo.cygport pkg
-
-echo testing...
-cygport texinfo.cygport test
-
-tar -cJf artifact.tar.xz texinfo-*/dist texinfo-*/log texinfo-*/build/info/test-suite.log
+exit $exit_status
