@@ -1,11 +1,11 @@
 NAME="texinfo"
-VERSION=6.3
+VERSION=6.3.90
 RELEASE=1
 
 HOMEPAGE="http://www.gnu.org/software/texinfo/"
 
-SRC_URI="mirror://gnu/texinfo/texinfo-${VERSION}.tar.xz"
-# SRC_URI="http://alpha.gnu.org/gnu/texinfo/texinfo-${VERSION}.tar.xz"
+# SRC_URI="mirror://gnu/texinfo/texinfo-${VERSION}.tar.xz"
+SRC_URI="http://alpha.gnu.org/gnu/texinfo/texinfo-${VERSION}.tar.xz"
 
 # SVN_URI="svn://svn.sv.gnu.org/texinfo/trunk"
 # inherit svn
@@ -13,7 +13,7 @@ SRC_URI="mirror://gnu/texinfo/texinfo-${VERSION}.tar.xz"
 SRC_URI+=" texinfo-tex.sh"
 SRC_URI+=" 0p_update-info-dir.dash"
 
-PATCH_URI="6.1.90-1-fix_interactive_tests.patch"
+# PATCH_URI="6.1.90-1-fix_interactive_tests.patch"
 
 PKG_NAMES="texinfo texinfo-tex info"
 
