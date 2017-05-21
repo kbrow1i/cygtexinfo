@@ -1,5 +1,5 @@
---- origsrc/texinfo-6.3.90/info/t/Init-inter.inc	2016-12-08 15:25:46.000000000 -0500
-+++ src/texinfo-6.3.90/info/t/Init-inter.inc	2017-04-23 17:49:21.285828700 -0400
+--- origsrc/texinfo-6.3.91/info/t/Init-inter.inc	2016-12-08 15:25:46.000000000 -0500
++++ src/texinfo-6.3.91/info/t/Init-inter.inc	2017-05-20 17:56:40.069199600 -0400
 @@ -102,8 +102,8 @@ run_ginfo ()
      exec 7>&- ;
      exec 8>$FINISHEDFIFO ;
@@ -20,8 +20,8 @@
  
    # Check for pgrep
    if findprog pgrep; then
---- origsrc/texinfo-6.3.90/info/t/Timeout-test.inc	2015-07-13 17:45:42.000000000 -0400
-+++ src/texinfo-6.3.90/info/t/Timeout-test.inc	2017-04-23 17:49:21.294861000 -0400
+--- origsrc/texinfo-6.3.91/info/t/Timeout-test.inc	2015-07-13 17:45:42.000000000 -0400
++++ src/texinfo-6.3.91/info/t/Timeout-test.inc	2017-05-20 17:56:40.072201700 -0400
 @@ -39,7 +39,7 @@ fi
  # "read -t 0" has an exit status of 1, not 2
  
@@ -31,8 +31,8 @@
    status=$?
  fi
  
---- origsrc/texinfo-6.3.90/info/t/adjust-anchors.sh	2015-06-05 11:47:04.000000000 -0400
-+++ src/texinfo-6.3.90/info/t/adjust-anchors.sh	2017-04-23 17:49:21.299853200 -0400
+--- origsrc/texinfo-6.3.91/info/t/adjust-anchors.sh	2015-06-05 11:47:04.000000000 -0400
++++ src/texinfo-6.3.91/info/t/adjust-anchors.sh	2017-05-20 17:56:40.074203500 -0400
 @@ -27,8 +27,8 @@ run_ginfo -f anchors
  
  # Go to anchor in a UTF-8 encoded file when the current character encoding is
@@ -44,8 +44,8 @@
  
  . $t/Timeout-test.inc
  
---- origsrc/texinfo-6.3.90/info/t/all-only.sh	2015-01-29 20:49:27.000000000 -0500
-+++ src/texinfo-6.3.90/info/t/all-only.sh	2017-04-23 17:49:21.304870000 -0400
+--- origsrc/texinfo-6.3.91/info/t/all-only.sh	2015-01-29 20:49:27.000000000 -0500
++++ src/texinfo-6.3.91/info/t/all-only.sh	2017-05-20 17:56:40.148479100 -0400
 @@ -25,7 +25,7 @@ MANPATH=.; export MANPATH
  # to that file without loading a menu of matching files.  This relies
  # on there being no "intera" entry in "dir".
@@ -55,8 +55,8 @@
  . $t/Timeout-test.inc
  
  grep '^File: intera.info,  Node: Top' $GINFO_OUTPUT
---- origsrc/texinfo-6.3.90/info/t/anchor-positions.sh	2015-01-29 20:49:46.000000000 -0500
-+++ src/texinfo-6.3.90/info/t/anchor-positions.sh	2017-04-23 17:49:21.310875400 -0400
+--- origsrc/texinfo-6.3.91/info/t/anchor-positions.sh	2015-01-29 20:49:46.000000000 -0500
++++ src/texinfo-6.3.91/info/t/anchor-positions.sh	2017-05-20 17:56:40.152483300 -0400
 @@ -22,7 +22,7 @@ srcdir=${srcdir:-.}
  # encoding conversion doesn't cause the program to freeze.
  LANG=en_US.iso8859-1; export LANG
@@ -66,8 +66,8 @@
  
  . $t/Timeout-test.inc
  cleanup
---- origsrc/texinfo-6.3.90/info/t/body-start.sh	2015-01-29 20:49:53.000000000 -0500
-+++ src/texinfo-6.3.90/info/t/body-start.sh	2017-04-23 17:49:21.315857200 -0400
+--- origsrc/texinfo-6.3.91/info/t/body-start.sh	2015-01-29 20:49:53.000000000 -0500
++++ src/texinfo-6.3.91/info/t/body-start.sh	2017-05-20 17:56:40.155485400 -0400
 @@ -20,7 +20,7 @@ srcdir=${srcdir:-.}
  
  run_ginfo -f body-start
@@ -77,8 +77,8 @@
  
  . $t/Timeout-test.inc
  
---- origsrc/texinfo-6.3.90/info/t/c-u-m-x-scroll-forward.sh	2016-01-13 07:32:36.000000000 -0500
-+++ src/texinfo-6.3.90/info/t/c-u-m-x-scroll-forward.sh	2017-04-23 17:49:21.321903400 -0400
+--- origsrc/texinfo-6.3.91/info/t/c-u-m-x-scroll-forward.sh	2016-01-13 07:32:36.000000000 -0500
++++ src/texinfo-6.3.91/info/t/c-u-m-x-scroll-forward.sh	2017-05-20 17:56:40.158488700 -0400
 @@ -31,8 +31,8 @@ COLUMNS=80; export COLUMNS
  run_ginfo -f intera -n 'Scroll four lines'
  
@@ -90,8 +90,19 @@
  
  . $t/Timeout-test.inc
  
---- origsrc/texinfo-6.3.90/info/t/dir-entry-to-subdir.sh	2015-07-15 09:06:41.000000000 -0400
-+++ src/texinfo-6.3.90/info/t/dir-entry-to-subdir.sh	2017-04-23 17:49:21.337902500 -0400
+--- origsrc/texinfo-6.3.91/info/t/close-window-after-search.sh	2017-05-20 11:38:31.000000000 -0400
++++ src/texinfo-6.3.91/info/t/close-window-after-search.sh	2017-05-20 17:56:27.959545300 -0400
+@@ -22,7 +22,7 @@ run_ginfo -f intera
+ 
+ # Split window, do a search, and then close the window the search took
+ # place in.
+-printf '\0302sblah\r\0300q' >$PTY_TYPE
++printf '\0302sblah\r\0300q' >&7
+ 
+ . $t/Timeout-test.inc
+ cleanup
+--- origsrc/texinfo-6.3.91/info/t/dir-entry-to-subdir.sh	2015-07-15 09:06:41.000000000 -0400
++++ src/texinfo-6.3.91/info/t/dir-entry-to-subdir.sh	2017-05-20 17:56:40.162492600 -0400
 @@ -20,7 +20,7 @@ srcdir=${srcdir:-.}
  
  # Follow a dir entry to a file in a subdirectory of infodir
@@ -101,8 +112,8 @@
  . $t/Timeout-test.inc
  
  cat $GINFO_OUTPUT
---- origsrc/texinfo-6.3.90/info/t/dir-merge.sh	2016-09-06 20:43:16.000000000 -0400
-+++ src/texinfo-6.3.90/info/t/dir-merge.sh	2017-04-23 17:49:21.343884800 -0400
+--- origsrc/texinfo-6.3.91/info/t/dir-merge.sh	2016-09-06 20:43:16.000000000 -0400
++++ src/texinfo-6.3.91/info/t/dir-merge.sh	2017-05-20 17:56:40.166497100 -0400
 @@ -23,7 +23,7 @@ INFOPATH=$INFOPATH:$t/infodir/subdir
  # Follow a reference to file in merged dir
  run_ginfo -v hide-note-references=On file-in-subdir
@@ -112,8 +123,8 @@
  . $t/Timeout-test.inc
  
  cleanup
---- origsrc/texinfo-6.3.90/info/t/empty-infopath.sh	2015-05-17 05:07:17.000000000 -0400
-+++ src/texinfo-6.3.90/info/t/empty-infopath.sh	2017-04-23 17:49:21.348885000 -0400
+--- origsrc/texinfo-6.3.91/info/t/empty-infopath.sh	2015-05-17 05:07:17.000000000 -0400
++++ src/texinfo-6.3.91/info/t/empty-infopath.sh	2017-05-20 17:56:40.169498900 -0400
 @@ -24,7 +24,7 @@ srcdir=${srcdir:-.}
  INFOPATH=
  export INFOPATH
@@ -123,8 +134,8 @@
  . $t/Timeout-test.inc
  
  cleanup
---- origsrc/texinfo-6.3.90/info/t/end-of-line.sh	2015-01-29 20:51:15.000000000 -0500
-+++ src/texinfo-6.3.90/info/t/end-of-line.sh	2017-04-23 17:49:21.354912800 -0400
+--- origsrc/texinfo-6.3.91/info/t/end-of-line.sh	2015-01-29 20:51:15.000000000 -0500
++++ src/texinfo-6.3.91/info/t/end-of-line.sh	2017-05-20 17:56:40.173502800 -0400
 @@ -20,7 +20,7 @@ srcdir=${srcdir:-.}
  
  run_ginfo -f intera
@@ -134,8 +145,8 @@
  
  . $t/Timeout-test.inc
  
---- origsrc/texinfo-6.3.90/info/t/gc-split.sh	2016-01-13 07:33:11.000000000 -0500
-+++ src/texinfo-6.3.90/info/t/gc-split.sh	2017-04-23 17:49:21.359894900 -0400
+--- origsrc/texinfo-6.3.91/info/t/gc-split.sh	2016-01-13 07:33:11.000000000 -0500
++++ src/texinfo-6.3.91/info/t/gc-split.sh	2017-05-20 17:56:40.178508200 -0400
 @@ -22,7 +22,7 @@ run_ginfo -f split
  # Cause the garbage collector to run in a split file by cancelling an 
  # incremental search.  Refresh the screen afterwards to increase the 
@@ -145,8 +156,8 @@
  . $t/Timeout-test.inc
  
  cleanup
---- origsrc/texinfo-6.3.90/info/t/goal-column.sh	2015-01-29 20:51:53.000000000 -0500
-+++ src/texinfo-6.3.90/info/t/goal-column.sh	2017-04-23 17:49:21.365901900 -0400
+--- origsrc/texinfo-6.3.91/info/t/goal-column.sh	2015-01-29 20:51:53.000000000 -0500
++++ src/texinfo-6.3.91/info/t/goal-column.sh	2017-05-20 17:56:40.183512700 -0400
 @@ -20,9 +20,9 @@ srcdir=${srcdir:-.}
  
  run_ginfo -f intera -n 'Goal column'
@@ -160,8 +171,8 @@
  . $t/Timeout-test.inc
  
  diff $GINFO_OUTPUT $t/node-target
---- origsrc/texinfo-6.3.90/info/t/goto-quoted.sh	2015-01-29 20:51:54.000000000 -0500
-+++ src/texinfo-6.3.90/info/t/goto-quoted.sh	2017-04-23 17:49:21.371911900 -0400
+--- origsrc/texinfo-6.3.91/info/t/goto-quoted.sh	2015-01-29 20:51:54.000000000 -0500
++++ src/texinfo-6.3.91/info/t/goto-quoted.sh	2017-05-20 17:56:40.206534600 -0400
 @@ -20,7 +20,7 @@ srcdir=${srcdir:-.}
  
  run_ginfo -f quoting
@@ -171,21 +182,8 @@
  
  . $t/Timeout-test.inc
  
---- origsrc/texinfo-6.3.90/info/t/inc-sea-bs-after-strip-cr.sh	2015-09-25 12:28:14.000000000 -0400
-+++ src/texinfo-6.3.90/info/t/inc-sea-bs-after-strip-cr.sh	2017-04-23 17:49:21.377916900 -0400
-@@ -23,8 +23,8 @@ srcdir=${srcdir:-.}
- # stripped from the file.  This is the case for the test file because
- # the tag table entry is incorrect for the second node.
- run_ginfo -f inc-sea-bs-after-strip-cr
--printf '\023xxy\010\r' >$PTY_TYPE
--printf q >$PTY_TYPE
-+printf '\023xxy\010\r' >&7
-+printf q >&7
- . $t/Timeout-test.inc
- 
- cleanup
---- origsrc/texinfo-6.3.90/info/t/inc-sea-forward-nonregex.sh	2016-01-13 07:31:57.000000000 -0500
-+++ src/texinfo-6.3.90/info/t/inc-sea-forward-nonregex.sh	2017-04-23 17:49:21.383453100 -0400
+--- origsrc/texinfo-6.3.91/info/t/inc-sea-forward-nonregex.sh	2016-01-13 07:31:57.000000000 -0500
++++ src/texinfo-6.3.91/info/t/inc-sea-forward-nonregex.sh	2017-05-20 17:56:40.210539700 -0400
 @@ -24,8 +24,8 @@ run_ginfo -f search
  # search.  Test deleting characters from search string with backspace.  Go
  # forward to match in next node.  Test we end up at the end of the match
@@ -197,8 +195,8 @@
  
  . $t/Timeout-test.inc
  
---- origsrc/texinfo-6.3.90/info/t/inc-sea-forward.sh	2016-01-13 07:32:54.000000000 -0500
-+++ src/texinfo-6.3.90/info/t/inc-sea-forward.sh	2017-04-23 17:49:21.388543000 -0400
+--- origsrc/texinfo-6.3.91/info/t/inc-sea-forward.sh	2016-01-13 07:32:54.000000000 -0500
++++ src/texinfo-6.3.91/info/t/inc-sea-forward.sh	2017-05-20 17:56:40.214543300 -0400
 @@ -24,8 +24,8 @@ run_ginfo -f search
  # search string with backspace.  Go forward to match in next node.  Test
  # we end up at the end of the match string by trying to wrap to the next line
@@ -210,8 +208,8 @@
  
  . $t/Timeout-test.inc
  
---- origsrc/texinfo-6.3.90/info/t/inc-sea-history.sh	2016-01-13 07:32:59.000000000 -0500
-+++ src/texinfo-6.3.90/info/t/inc-sea-history.sh	2017-04-23 17:49:21.393529100 -0400
+--- origsrc/texinfo-6.3.91/info/t/inc-sea-history.sh	2016-01-13 07:32:59.000000000 -0500
++++ src/texinfo-6.3.91/info/t/inc-sea-history.sh	2017-05-20 17:56:40.218546900 -0400
 @@ -21,15 +21,15 @@ srcdir=${srcdir:-.}
  run_ginfo -f inc-sea-history
  
@@ -231,8 +229,8 @@
  . $t/Timeout-test.inc
  
  if test $RETVAL = 0; then
---- origsrc/texinfo-6.3.90/info/t/inc-sea-insensitive.sh	2016-01-13 07:33:06.000000000 -0500
-+++ src/texinfo-6.3.90/info/t/inc-sea-insensitive.sh	2017-04-23 17:49:21.398531600 -0400
+--- origsrc/texinfo-6.3.91/info/t/inc-sea-insensitive.sh	2016-01-13 07:33:06.000000000 -0500
++++ src/texinfo-6.3.91/info/t/inc-sea-insensitive.sh	2017-05-20 17:56:40.221550200 -0400
 @@ -23,8 +23,8 @@ run_ginfo -f intera -n 'Incremental sear
  # Search for "match" with incremental search, adding an upper-case character
  # to make the search case-sensitive.  Delete it and check the search goes back
@@ -244,8 +242,8 @@
  
  . $t/Timeout-test.inc
  
---- origsrc/texinfo-6.3.90/info/t/index-apropos.sh	2015-09-30 09:20:23.000000000 -0400
-+++ src/texinfo-6.3.90/info/t/index-apropos.sh	2017-04-23 17:49:21.404537400 -0400
+--- origsrc/texinfo-6.3.91/info/t/index-apropos.sh	2015-09-30 09:20:23.000000000 -0400
++++ src/texinfo-6.3.91/info/t/index-apropos.sh	2017-05-20 17:56:40.225553800 -0400
 @@ -24,7 +24,7 @@ run_ginfo
  # result. Then type "i" followed by <TAB> to check the indices in the
  # file are still there.
@@ -255,8 +253,8 @@
  # We exited the "i" prompt with "xxx\r" instead of "\007" because
  # C-g leads typeahead to be discarded so it would not be reliable.
  
---- origsrc/texinfo-6.3.90/info/t/index-completing.sh	2015-01-29 20:52:07.000000000 -0500
-+++ src/texinfo-6.3.90/info/t/index-completing.sh	2017-04-23 17:49:21.410542800 -0400
+--- origsrc/texinfo-6.3.91/info/t/index-completing.sh	2015-01-29 20:52:07.000000000 -0500
++++ src/texinfo-6.3.91/info/t/index-completing.sh	2017-05-20 17:56:40.229557400 -0400
 @@ -20,7 +20,7 @@ srcdir=${srcdir:-.}
  
  run_ginfo -f index-search
@@ -266,8 +264,8 @@
  . $t/Timeout-test.inc
  
  grep '^Node: Node 2' $GINFO_OUTPUT
---- origsrc/texinfo-6.3.90/info/t/index-long-nodeline.sh	2015-01-29 20:52:09.000000000 -0500
-+++ src/texinfo-6.3.90/info/t/index-long-nodeline.sh	2017-04-23 17:49:21.415547000 -0400
+--- origsrc/texinfo-6.3.91/info/t/index-long-nodeline.sh	2015-01-29 20:52:09.000000000 -0500
++++ src/texinfo-6.3.91/info/t/index-long-nodeline.sh	2017-05-20 17:56:40.233568300 -0400
 @@ -21,7 +21,8 @@ srcdir=${srcdir:-.}
  run_ginfo -f split
  # Follow an menu item from the index node to a node where physical lines
@@ -278,8 +276,8 @@
  . $t/Timeout-test.inc
  
  if test ! -f $GINFO_OUTPUT; then
---- origsrc/texinfo-6.3.90/info/t/index-search.sh	2015-01-29 20:52:11.000000000 -0500
-+++ src/texinfo-6.3.90/info/t/index-search.sh	2017-04-23 17:49:21.420553000 -0400
+--- origsrc/texinfo-6.3.91/info/t/index-search.sh	2015-01-29 20:52:11.000000000 -0500
++++ src/texinfo-6.3.91/info/t/index-search.sh	2017-05-20 17:56:40.238566200 -0400
 @@ -21,7 +21,7 @@ srcdir=${srcdir:-.}
  run_ginfo -f intera
  # Search in indices with 'virtual-index' command.  Go down to index
@@ -289,8 +287,8 @@
  
  . $t/Timeout-test.inc
  
---- origsrc/texinfo-6.3.90/info/t/index.sh	2015-01-29 20:52:12.000000000 -0500
-+++ src/texinfo-6.3.90/info/t/index.sh	2017-04-23 17:49:21.425581000 -0400
+--- origsrc/texinfo-6.3.91/info/t/index.sh	2015-01-29 20:52:12.000000000 -0500
++++ src/texinfo-6.3.91/info/t/index.sh	2017-05-20 17:56:40.243571300 -0400
 @@ -20,7 +20,7 @@ srcdir=${srcdir:-.}
  
  run_ginfo -f intera
@@ -300,8 +298,8 @@
  
  . $t/Timeout-test.inc
  
---- origsrc/texinfo-6.3.90/info/t/last-no-history.sh	2015-03-03 10:18:23.000000000 -0500
-+++ src/texinfo-6.3.90/info/t/last-no-history.sh	2017-04-23 17:49:21.429571900 -0400
+--- origsrc/texinfo-6.3.91/info/t/last-no-history.sh	2015-03-03 10:18:23.000000000 -0500
++++ src/texinfo-6.3.91/info/t/last-no-history.sh	2017-05-20 17:56:40.247574900 -0400
 @@ -21,7 +21,7 @@ srcdir=${srcdir:-.}
  run_ginfo -f intera
  
@@ -311,8 +309,8 @@
  . $t/Timeout-test.inc
  
  cleanup
---- origsrc/texinfo-6.3.90/info/t/last-node-not-top-level.sh	2015-01-29 20:52:15.000000000 -0500
-+++ src/texinfo-6.3.90/info/t/last-node-not-top-level.sh	2017-04-23 17:49:21.434578300 -0400
+--- origsrc/texinfo-6.3.91/info/t/last-node-not-top-level.sh	2015-01-29 20:52:15.000000000 -0500
++++ src/texinfo-6.3.91/info/t/last-node-not-top-level.sh	2017-05-20 17:56:40.251578800 -0400
 @@ -21,7 +21,8 @@ srcdir=${srcdir:-.}
  run_ginfo -f last-node-not-top-level -v scroll-last-node=Top
  
@@ -323,8 +321,8 @@
  . $t/Timeout-test.inc
  
  grep 'Node: Top' $GINFO_OUTPUT
---- origsrc/texinfo-6.3.90/info/t/menu-sequence.sh	2015-01-29 20:52:16.000000000 -0500
-+++ src/texinfo-6.3.90/info/t/menu-sequence.sh	2017-04-23 17:49:21.439568600 -0400
+--- origsrc/texinfo-6.3.91/info/t/menu-sequence.sh	2015-01-29 20:52:16.000000000 -0500
++++ src/texinfo-6.3.91/info/t/menu-sequence.sh	2017-05-20 17:56:40.255582700 -0400
 @@ -20,7 +20,8 @@ srcdir=${srcdir:-.}
  
  run_ginfo -f intera
@@ -335,8 +333,8 @@
  . $t/Timeout-test.inc
  
  if test ! -f $GINFO_OUTPUT; then
---- origsrc/texinfo-6.3.90/info/t/next-quoted.sh	2015-03-03 10:18:50.000000000 -0500
-+++ src/texinfo-6.3.90/info/t/next-quoted.sh	2017-04-23 17:49:21.444590800 -0400
+--- origsrc/texinfo-6.3.91/info/t/next-quoted.sh	2015-03-03 10:18:50.000000000 -0500
++++ src/texinfo-6.3.91/info/t/next-quoted.sh	2017-05-20 17:56:40.258586000 -0400
 @@ -20,7 +20,7 @@ srcdir=${srcdir:-.}
  
  run_ginfo -f quoting
@@ -346,8 +344,8 @@
  . $t/Timeout-test.inc
  
  if test ! -f $GINFO_OUTPUT; then
---- origsrc/texinfo-6.3.90/info/t/no-index.sh	2015-01-29 20:52:25.000000000 -0500
-+++ src/texinfo-6.3.90/info/t/no-index.sh	2017-04-23 17:49:21.449579500 -0400
+--- origsrc/texinfo-6.3.91/info/t/no-index.sh	2015-01-29 20:52:25.000000000 -0500
++++ src/texinfo-6.3.91/info/t/no-index.sh	2017-05-20 17:56:40.263591400 -0400
 @@ -20,7 +20,7 @@ srcdir=${srcdir:-.}
  
  run_ginfo -f sample
@@ -357,8 +355,8 @@
  . $t/Timeout-test.inc
  
  cleanup
---- origsrc/texinfo-6.3.90/info/t/quoted-label-and-target.sh	2015-03-03 10:21:53.000000000 -0500
-+++ src/texinfo-6.3.90/info/t/quoted-label-and-target.sh	2017-04-23 17:49:21.453581200 -0400
+--- origsrc/texinfo-6.3.91/info/t/quoted-label-and-target.sh	2015-03-03 10:21:53.000000000 -0500
++++ src/texinfo-6.3.91/info/t/quoted-label-and-target.sh	2017-05-20 17:56:40.268595600 -0400
 @@ -21,7 +21,7 @@ srcdir=${srcdir:-.}
  run_ginfo -f quoting
  
@@ -368,8 +366,8 @@
  . $t/Timeout-test.inc
  
  if test ! -f $GINFO_OUTPUT; then
---- origsrc/texinfo-6.3.90/info/t/quoted-label-as-target.sh	2015-03-03 10:17:19.000000000 -0500
-+++ src/texinfo-6.3.90/info/t/quoted-label-as-target.sh	2017-04-23 17:49:21.458586800 -0400
+--- origsrc/texinfo-6.3.91/info/t/quoted-label-as-target.sh	2015-03-03 10:17:19.000000000 -0500
++++ src/texinfo-6.3.91/info/t/quoted-label-as-target.sh	2017-05-20 17:56:40.271598000 -0400
 @@ -20,7 +20,7 @@ srcdir=${srcdir:-.}
  
  run_ginfo -f quoting
@@ -379,8 +377,8 @@
  . $t/Timeout-test.inc
  
  if test ! -f $GINFO_OUTPUT; then
---- origsrc/texinfo-6.3.90/info/t/quoted-manual-in-label.sh	2015-07-23 06:54:53.000000000 -0400
-+++ src/texinfo-6.3.90/info/t/quoted-manual-in-label.sh	2017-04-23 17:49:21.464591100 -0400
+--- origsrc/texinfo-6.3.91/info/t/quoted-manual-in-label.sh	2015-07-23 06:54:53.000000000 -0400
++++ src/texinfo-6.3.91/info/t/quoted-manual-in-label.sh	2017-05-20 17:56:40.275602200 -0400
 @@ -20,7 +20,7 @@ srcdir=${srcdir:-.}
  
  run_ginfo -f quoting
@@ -390,8 +388,8 @@
  . $t/Timeout-test.inc
  
  if test ! -f $GINFO_OUTPUT; then
---- origsrc/texinfo-6.3.90/info/t/quoted-manual-in-target.sh	2015-07-23 06:56:59.000000000 -0400
-+++ src/texinfo-6.3.90/info/t/quoted-manual-in-target.sh	2017-04-23 17:49:21.468615500 -0400
+--- origsrc/texinfo-6.3.91/info/t/quoted-manual-in-target.sh	2015-07-23 06:56:59.000000000 -0400
++++ src/texinfo-6.3.91/info/t/quoted-manual-in-target.sh	2017-05-20 17:56:40.279607300 -0400
 @@ -21,7 +21,7 @@ srcdir=${srcdir:-.}
  run_ginfo -f quoting
  # Follow a cross-reference with a manual and quoted nodename in the target,
@@ -401,8 +399,8 @@
  . $t/Timeout-test.inc
  
  if test ! -f $GINFO_OUTPUT; then
---- origsrc/texinfo-6.3.90/info/t/quoted-target.sh	2015-03-03 10:21:27.000000000 -0500
-+++ src/texinfo-6.3.90/info/t/quoted-target.sh	2017-04-23 17:49:21.474122700 -0400
+--- origsrc/texinfo-6.3.91/info/t/quoted-target.sh	2015-03-03 10:21:27.000000000 -0500
++++ src/texinfo-6.3.91/info/t/quoted-target.sh	2017-05-20 17:56:40.284611800 -0400
 @@ -20,7 +20,7 @@ srcdir=${srcdir:-.}
  
  run_ginfo -f quoting
@@ -412,8 +410,8 @@
  . $t/Timeout-test.inc
  
  if test ! -f $GINFO_OUTPUT; then
---- origsrc/texinfo-6.3.90/info/t/relative-reference.sh	2016-01-30 07:02:32.000000000 -0500
-+++ src/texinfo-6.3.90/info/t/relative-reference.sh	2017-04-23 17:49:21.479127300 -0400
+--- origsrc/texinfo-6.3.91/info/t/relative-reference.sh	2016-01-30 07:02:32.000000000 -0500
++++ src/texinfo-6.3.91/info/t/relative-reference.sh	2017-05-20 17:56:40.288615400 -0400
 @@ -22,8 +22,8 @@ srcdir=${srcdir:-.}
  # Close window (so destination file will be forgotten), and do it again with
  # the other window.
@@ -425,8 +423,8 @@
  
  . $t/Timeout-test.inc
  cleanup
---- origsrc/texinfo-6.3.90/info/t/replace-viewed.sh	2016-01-30 14:44:36.000000000 -0500
-+++ src/texinfo-6.3.90/info/t/replace-viewed.sh	2017-04-23 17:49:21.484644500 -0400
+--- origsrc/texinfo-6.3.91/info/t/replace-viewed.sh	2017-05-20 10:36:47.000000000 -0400
++++ src/texinfo-6.3.91/info/t/replace-viewed.sh	2017-05-20 17:56:40.291617500 -0400
 @@ -32,7 +32,7 @@ if test $GINFO_PID = unknown ; then
    RETVAL=77 # skip test
    cleanup
@@ -447,8 +445,8 @@
  
  rm -f t/replace-viewed.info
  . $t/Timeout-test.inc
---- origsrc/texinfo-6.3.90/info/t/resize-in-completions.sh	2015-06-06 10:11:40.000000000 -0400
-+++ src/texinfo-6.3.90/info/t/resize-in-completions.sh	2017-04-23 17:49:21.488822900 -0400
+--- origsrc/texinfo-6.3.91/info/t/resize-in-completions.sh	2015-06-06 10:11:40.000000000 -0400
++++ src/texinfo-6.3.91/info/t/resize-in-completions.sh	2017-05-20 17:56:40.295621400 -0400
 @@ -22,16 +22,16 @@ srcdir=${srcdir:-.}
  
  run_ginfo -f file-menu
@@ -469,8 +467,8 @@
  fi
  
  . $t/Timeout-test.inc
---- origsrc/texinfo-6.3.90/info/t/search-after-tag.sh	2015-01-29 20:52:56.000000000 -0500
-+++ src/texinfo-6.3.90/info/t/search-after-tag.sh	2017-04-23 17:49:21.494816800 -0400
+--- origsrc/texinfo-6.3.91/info/t/search-after-tag.sh	2015-01-29 20:52:56.000000000 -0500
++++ src/texinfo-6.3.91/info/t/search-after-tag.sh	2017-05-20 17:56:40.298624100 -0400
 @@ -20,7 +20,7 @@ srcdir=${srcdir:-.}
  
  run_ginfo -f intera -n Searching
@@ -480,8 +478,8 @@
  
  . $t/Timeout-test.inc
  
---- origsrc/texinfo-6.3.90/info/t/search-empty.sh	2015-01-29 20:52:58.000000000 -0500
-+++ src/texinfo-6.3.90/info/t/search-empty.sh	2017-04-23 17:49:21.498820400 -0400
+--- origsrc/texinfo-6.3.91/info/t/search-empty.sh	2015-01-29 20:52:58.000000000 -0500
++++ src/texinfo-6.3.91/info/t/search-empty.sh	2017-05-20 17:56:40.302628600 -0400
 @@ -20,7 +20,7 @@ srcdir=${srcdir:-.}
  
  run_ginfo -f intera
@@ -491,8 +489,8 @@
  
  . $t/Timeout-test.inc
  cleanup
---- origsrc/texinfo-6.3.90/info/t/search-skip-screen.sh	2015-01-29 20:52:59.000000000 -0500
-+++ src/texinfo-6.3.90/info/t/search-skip-screen.sh	2017-04-23 17:49:21.503824900 -0400
+--- origsrc/texinfo-6.3.91/info/t/search-skip-screen.sh	2015-01-29 20:52:59.000000000 -0500
++++ src/texinfo-6.3.91/info/t/search-skip-screen.sh	2017-05-20 17:56:40.306632200 -0400
 @@ -21,7 +21,7 @@ srcdir=${srcdir:-.}
  run_ginfo -v search-skip-screen=Off -f search
  
@@ -502,8 +500,8 @@
  
  . $t/Timeout-test.inc
  
---- origsrc/texinfo-6.3.90/info/t/search-split-after-index.sh	2016-09-06 20:43:16.000000000 -0400
-+++ src/texinfo-6.3.90/info/t/search-split-after-index.sh	2017-04-23 17:49:21.509831400 -0400
+--- origsrc/texinfo-6.3.91/info/t/search-split-after-index.sh	2016-09-06 20:43:16.000000000 -0400
++++ src/texinfo-6.3.91/info/t/search-split-after-index.sh	2017-05-20 17:56:40.310636700 -0400
 @@ -21,7 +21,7 @@ srcdir=${srcdir:-.}
  # Search for text in a split file after loading an index entry from the
  # command-line.
@@ -513,8 +511,8 @@
  
  . $t/Timeout-test.inc
  
---- origsrc/texinfo-6.3.90/info/t/split-file-menu.sh	2015-01-29 20:53:06.000000000 -0500
-+++ src/texinfo-6.3.90/info/t/split-file-menu.sh	2017-04-23 17:49:21.513833900 -0400
+--- origsrc/texinfo-6.3.91/info/t/split-file-menu.sh	2015-01-29 20:53:06.000000000 -0500
++++ src/texinfo-6.3.91/info/t/split-file-menu.sh	2017-05-20 17:56:40.314641200 -0400
 @@ -23,7 +23,7 @@ run_ginfo -f split 'Second'
  # Follow a menu entry in a split file to a node in a different subfile from
  # the one containing "Top".  Check that we arrived properly and remembered
@@ -524,8 +522,8 @@
  . $t/Timeout-test.inc
  
  if test ! -f $GINFO_OUTPUT; then
---- origsrc/texinfo-6.3.90/info/t/split-footnotes.sh	2015-09-30 09:24:12.000000000 -0400
-+++ src/texinfo-6.3.90/info/t/split-footnotes.sh	2017-04-23 17:49:21.518838400 -0400
+--- origsrc/texinfo-6.3.91/info/t/split-footnotes.sh	2015-09-30 09:24:12.000000000 -0400
++++ src/texinfo-6.3.91/info/t/split-footnotes.sh	2017-05-20 17:56:40.318644200 -0400
 @@ -20,7 +20,7 @@ srcdir=${srcdir:-.}
  
  run_ginfo -f intera -n 'Node with footnotes' -v automatic-footnotes=On
@@ -535,8 +533,8 @@
  . $t/Timeout-test.inc
  
  cleanup
---- origsrc/texinfo-6.3.90/info/t/split-index.sh	2015-01-29 20:53:11.000000000 -0500
-+++ src/texinfo-6.3.90/info/t/split-index.sh	2017-04-23 17:49:21.523842900 -0400
+--- origsrc/texinfo-6.3.91/info/t/split-index.sh	2015-01-29 20:53:11.000000000 -0500
++++ src/texinfo-6.3.91/info/t/split-index.sh	2017-05-20 17:56:40.321647500 -0400
 @@ -21,7 +21,7 @@ srcdir=${srcdir:-.}
  # Follow an index entry in a split file
  
@@ -546,8 +544,8 @@
  . $t/Timeout-test.inc
  
  if test ! -f $GINFO_OUTPUT; then
---- origsrc/texinfo-6.3.90/info/t/star-note-non-whitespace.sh	2015-01-29 20:53:15.000000000 -0500
-+++ src/texinfo-6.3.90/info/t/star-note-non-whitespace.sh	2017-04-23 17:49:21.528847400 -0400
+--- origsrc/texinfo-6.3.91/info/t/star-note-non-whitespace.sh	2015-01-29 20:53:15.000000000 -0500
++++ src/texinfo-6.3.91/info/t/star-note-non-whitespace.sh	2017-05-20 17:56:40.327652900 -0400
 @@ -22,7 +22,7 @@ run_ginfo -f intera -n 'Star note non-wh
  
  # Check that "*note" is not interpreted as a cross-reference marker if
@@ -557,8 +555,8 @@
  
  . $t/Timeout-test.inc
  
---- origsrc/texinfo-6.3.90/info/t/tab-argument.sh	2015-01-29 20:53:18.000000000 -0500
-+++ src/texinfo-6.3.90/info/t/tab-argument.sh	2017-04-23 17:49:21.533851500 -0400
+--- origsrc/texinfo-6.3.91/info/t/tab-argument.sh	2015-01-29 20:53:18.000000000 -0500
++++ src/texinfo-6.3.91/info/t/tab-argument.sh	2017-05-20 17:56:40.330655900 -0400
 @@ -20,7 +20,7 @@ srcdir=${srcdir:-.}
  
  run_ginfo -f intera -n 'Argument to tab'
@@ -568,8 +566,8 @@
  . $t/Timeout-test.inc
  
  diff $GINFO_OUTPUT $t/node-target
---- origsrc/texinfo-6.3.90/info/t/tab-no-xref.sh	2015-02-21 05:00:16.000000000 -0500
-+++ src/texinfo-6.3.90/info/t/tab-no-xref.sh	2017-04-23 17:49:21.538857900 -0400
+--- origsrc/texinfo-6.3.91/info/t/tab-no-xref.sh	2015-02-21 05:00:16.000000000 -0500
++++ src/texinfo-6.3.91/info/t/tab-no-xref.sh	2017-05-20 17:56:40.334659200 -0400
 @@ -21,7 +21,7 @@ srcdir=${srcdir:-.}
  run_ginfo -v scroll-last-node=Top -f no-xref.info
  # Check that pressing tab in a file with no cross-references or menus
@@ -579,8 +577,8 @@
  . $t/Timeout-test.inc
  
  cleanup
---- origsrc/texinfo-6.3.90/info/t/tab-skip-node.sh	2015-02-21 07:13:53.000000000 -0500
-+++ src/texinfo-6.3.90/info/t/tab-skip-node.sh	2017-04-23 17:49:21.543876300 -0400
+--- origsrc/texinfo-6.3.91/info/t/tab-skip-node.sh	2015-02-21 07:13:53.000000000 -0500
++++ src/texinfo-6.3.91/info/t/tab-skip-node.sh	2017-05-20 17:56:40.338664000 -0400
 @@ -23,7 +23,7 @@ run_ginfo -f tab-skip-node
  # when pressing tab, and then going back in the window history, goes
  # back to the last node that was actually displayed, and not to the
@@ -590,8 +588,8 @@
  . $t/Timeout-test.inc
  
  grep 'Node: Top' $GINFO_OUTPUT
---- origsrc/texinfo-6.3.90/info/t/tab.sh	2015-03-03 11:35:08.000000000 -0500
-+++ src/texinfo-6.3.90/info/t/tab.sh	2017-04-23 17:49:21.548866600 -0400
+--- origsrc/texinfo-6.3.91/info/t/tab.sh	2015-03-03 11:35:08.000000000 -0500
++++ src/texinfo-6.3.91/info/t/tab.sh	2017-05-20 17:56:40.342667000 -0400
 @@ -20,7 +20,7 @@ srcdir=${srcdir:-.}
  
  run_ginfo -f intera
@@ -601,8 +599,8 @@
  . $t/Timeout-test.inc
  
  if test ! -f $GINFO_OUTPUT; then
---- origsrc/texinfo-6.3.90/info/t/window-split-dir.sh	2015-07-14 08:42:33.000000000 -0400
-+++ src/texinfo-6.3.90/info/t/window-split-dir.sh	2017-04-23 17:49:21.553889900 -0400
+--- origsrc/texinfo-6.3.91/info/t/window-split-dir.sh	2015-07-14 08:42:33.000000000 -0400
++++ src/texinfo-6.3.91/info/t/window-split-dir.sh	2017-05-20 17:56:40.346670900 -0400
 @@ -21,7 +21,7 @@ srcdir=${srcdir:-.}
  # Load dir node
  run_ginfo
@@ -612,8 +610,8 @@
  . $t/Timeout-test.inc
  
  grep '^File: dir' $GINFO_OUTPUT
---- origsrc/texinfo-6.3.90/info/t/xref-across-lines.sh	2015-08-12 16:33:16.000000000 -0400
-+++ src/texinfo-6.3.90/info/t/xref-across-lines.sh	2017-04-23 17:49:21.558874000 -0400
+--- origsrc/texinfo-6.3.91/info/t/xref-across-lines.sh	2015-08-12 16:33:16.000000000 -0400
++++ src/texinfo-6.3.91/info/t/xref-across-lines.sh	2017-05-20 17:56:40.350675200 -0400
 @@ -19,7 +19,7 @@ srcdir=${srcdir:-.}
  . $t/Init-inter.inc
  
@@ -623,8 +621,8 @@
  . $t/Timeout-test.inc
  
  diff $GINFO_OUTPUT $t/node-target
---- origsrc/texinfo-6.3.90/info/t/xref-to-anchor.sh	2015-07-14 08:02:25.000000000 -0400
-+++ src/texinfo-6.3.90/info/t/xref-to-anchor.sh	2017-04-23 17:49:21.564889400 -0400
+--- origsrc/texinfo-6.3.91/info/t/xref-to-anchor.sh	2015-07-14 08:02:25.000000000 -0400
++++ src/texinfo-6.3.91/info/t/xref-to-anchor.sh	2017-05-20 17:56:40.354679700 -0400
 @@ -20,10 +20,10 @@ srcdir=${srcdir:-.}
  
  run_ginfo -f xref_to_anchor
