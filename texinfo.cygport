@@ -39,8 +39,9 @@ info_DESCRIPTION="This package provides the standalone info viewer."
 
 texinfo_REQUIRES="info"
 
-# texindex calls gawk; postinstall script calls mktexlsr.
-texinfo_tex_REQUIRES="gawk texinfo texlive-collection-basic"
+# texindex calls gawk; postinstall script calls mktexlsr, texinfo.tex
+# uses lcircle fonts.
+texinfo_tex_REQUIRES="gawk texinfo texlive-collection-latex"
 
 texinfo_CONTENTS="
 	usr/bin/makeinfo
