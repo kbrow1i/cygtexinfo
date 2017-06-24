@@ -1,17 +1,34 @@
-The following packages have been updated in the Cygwin distribution:
+From cygwin-announce-texinfo-6.4-1 Sat Jun 24 10:44:29 2017
+From: Ken Brown <kbrown@cornell.edu>
+To: cygwin-announce@cygwin.com
+Date: Sat, 24 Jun 2017 10:44:29 -0400
+Subject: texinfo 6.4-1
 
-* texinfo-6.3-1
-* info-6.3-1
-* texinfo-tex-6.3-1
+The following packages have been uploaded to the Cygwin distribution:
 
-Texinfo is a documentation system that uses a single source file to produce output in a number of formats, both online and printed (dvi, html, info, pdf, xml, etc.).
+* texinfo-6.4-1
+* texinfo-tex-6.4-1
+* info-6.4-1
 
-This is an update to the latest upstream release.  See the release announcement (http://lists.gnu.org/archive/html/bug-texinfo/2016-09/msg00024.html) for a list of changes since the last release.
+Texinfo is a documentation system that uses a single source file to
+produce output in a number of formats, both online and printed (dvi,
+html, info, pdf, xml, etc.).
+
+This is an update to the latest upstream release.  See the release
+announcement at
+
+  http://lists.gnu.org/archive/html/bug-texinfo/2017-06/msg00023.html
+
+for a list of changes since the last release.
 
 Cygwin packaging
 ================
-
-The info package contains the standalone info viewer as well as the install-info program.  The texinfo package contains everything else except support for the printable output formats (such as pdf).  The texinfo-tex package supplies the latter.  In particular, /usr/bin/makeinfo is in the texinfo package, but the command 'makeinfo --pdf' won't work unless you install texinfo-tex.
+The info package contains the standalone info viewer as well as the
+install-info program.  The texinfo package contains everything else
+except support for the printable output formats (such as pdf).  The
+texinfo-tex package supplies the latter.  In particular,
+/usr/bin/makeinfo is in the texinfo package, but the command 'makeinfo
+--pdf' won't work unless you install texinfo-tex.
 
 Ken Brown
 Cygwin's texinfo maintainer

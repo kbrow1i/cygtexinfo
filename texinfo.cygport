@@ -1,11 +1,11 @@
 NAME="texinfo"
-VERSION=6.3.92
-RELEASE=2
+VERSION=6.4
+RELEASE=1
 
 HOMEPAGE="http://www.gnu.org/software/texinfo/"
 
-# SRC_URI="mirror://gnu/texinfo/texinfo-${VERSION}.tar.xz"
-SRC_URI="http://alpha.gnu.org/gnu/texinfo/texinfo-${VERSION}.tar.xz"
+SRC_URI="mirror://gnu/texinfo/texinfo-${VERSION}.tar.xz"
+# SRC_URI="http://alpha.gnu.org/gnu/texinfo/texinfo-${VERSION}.tar.xz"
 
 # SVN_URI="svn://svn.sv.gnu.org/texinfo/trunk"
 # inherit svn
