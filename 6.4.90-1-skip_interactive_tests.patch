@@ -1,0 +1,17 @@
+--- origsrc/texinfo-6.4.90/info/Makefile.am	2017-07-10 15:05:43.000000000 -0400
++++ src/texinfo-6.4.90/info/Makefile.am	2017-07-12 11:46:33.044089500 -0400
+@@ -77,10 +77,10 @@ BUILT_SOURCES = funs.h
+ 
+ # Test suite
+ 
+-if have_ptys
+-check_PROGRAMS = pseudotty
+-pseudotty_SOURCES = pseudotty.c
+-endif
++# if have_ptys
++# check_PROGRAMS = pseudotty
++# pseudotty_SOURCES = pseudotty.c
++# endif
+ 
+ TESTS = \
+ 	t/file.sh \

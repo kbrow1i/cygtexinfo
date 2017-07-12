@@ -13,7 +13,7 @@ SRC_URI="http://alpha.gnu.org/gnu/texinfo/texinfo-${VERSION}.tar.xz"
 SRC_URI+=" texinfo-tex.sh"
 SRC_URI+=" 0p_update-info-dir.dash"
 
-PATCH_URI="6.4.90-1-fix_interactive_tests.patch"
+PATCH_URI="6.4.90-1-skip_interactive_tests.patch"
 
 PKG_NAMES="texinfo texinfo-tex info"
 
