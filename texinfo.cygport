@@ -1,5 +1,5 @@
 NAME="texinfo"
-VERSION=6.4.90
+VERSION=6.4.91
 RELEASE=1
 
 HOMEPAGE="http://www.gnu.org/software/texinfo/"
