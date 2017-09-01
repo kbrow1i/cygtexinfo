@@ -1,6 +1,6 @@
 NAME="texinfo"
 VERSION=6.4.91
-RELEASE=1
+RELEASE=2
 
 HOMEPAGE="http://www.gnu.org/software/texinfo/"
 
@@ -13,7 +13,7 @@ SRC_URI="http://alpha.gnu.org/gnu/texinfo/texinfo-${VERSION}.tar.xz"
 SRC_URI+=" texinfo-tex.sh"
 SRC_URI+=" 0p_update-info-dir.dash"
 
-PATCH_URI="6.4.90-1-skip_some_interactive_tests.patch"
+PATCH_URI="pseudotty.patch"
 
 PKG_NAMES="texinfo texinfo-tex info"
 
