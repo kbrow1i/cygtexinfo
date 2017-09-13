@@ -1,25 +1,25 @@
-From cygwin-announce-texinfo-6.4-1 Sat Jun 24 10:44:29 2017
+From cygwin-announce-texinfo-6.5-1 Wed Sep 13 08:20:29 2017
 From: Ken Brown <kbrown@cornell.edu>
 To: cygwin-announce@cygwin.com
-Date: Sat, 24 Jun 2017 10:44:29 -0400
-Subject: texinfo 6.4-1
+Date: Wed, 13 Sep 2017 08:20:29 -0400
+Subject: texinfo 6.5-1
 
 The following packages have been uploaded to the Cygwin distribution:
 
-* texinfo-6.4-1
-* texinfo-tex-6.4-1
-* info-6.4-1
+* texinfo-6.5-1
+* texinfo-tex-6.5-1
+* info-6.5-1
 
 Texinfo is a documentation system that uses a single source file to
 produce output in a number of formats, both online and printed (dvi,
 html, info, pdf, xml, etc.).
 
-This is an update to the latest upstream release.  See the release
-announcement at
+This is an update to the latest upstream release.  It is primarily a
+bugfix release.  See the announcement at
 
-  http://lists.gnu.org/archive/html/bug-texinfo/2017-06/msg00023.html
+  http://lists.gnu.org/archive/html/bug-texinfo/2017-09/msg00013.html
 
-for a list of changes since the last release.
+for more details.
 
 Cygwin packaging
 ================
