@@ -1,6 +1,6 @@
 NAME="texinfo"
-VERSION=6.5
-RELEASE=2
+VERSION=6.6
+RELEASE=1
 
 HOMEPAGE="http://www.gnu.org/software/texinfo/"
 
@@ -12,6 +12,8 @@ SRC_URI="mirror://gnu/texinfo/texinfo-${VERSION}.tar.xz"
 
 SRC_URI+=" texinfo-tex.sh"
 SRC_URI+=" 0p_update-info-dir.dash"
+
+PATCH_URI="0001-documentencoding-is-not-file-specific.patch"
 
 PKG_NAMES="texinfo texinfo-tex info"
 

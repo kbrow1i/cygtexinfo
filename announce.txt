@@ -1,20 +1,25 @@
-From cygwin-announce-texinfo-6.5-2 Mon Oct 23 21:19:36 2017
+From cygwin-announce-texinfo-6.6-1 Mon Feb 25 12:43:08 2019
 From: Ken Brown <kbrown@cornell.edu>
 To: cygwin-announce@cygwin.com
-Date: Mon, 23 Oct 2017 21:19:36 -0400
-Subject: texinfo 6.5-2
+Date: Mon, 25 Feb 2019 12:43:08 -0500
+Message-Id: <20190225124308.22652-1-kbrown@cornell.edu>
+Subject: texinfo 6.6-1
 
 The following packages have been uploaded to the Cygwin distribution:
 
-* texinfo-6.5-2
-* texinfo-tex-6.5-2
-* info-6.5-2
+* texinfo-6.6-1
+* texinfo-tex-6.6-1
+* info-6.6-1
 
 Texinfo is a documentation system that uses a single source file to
 produce output in a number of formats, both online and printed (dvi,
 html, info, pdf, xml, etc.).
 
-This is a rebuild of texinfo-6.5-1 for perl-5.26.1.
+This is an update to the latest upstream release.  See
+
+  http://lists.gnu.org/archive/html/bug-texinfo/2019-02/msg00021.html
+
+for a list of changes since the previous release.
 
 Cygwin packaging
 ================
